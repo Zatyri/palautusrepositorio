@@ -1,3 +1,3 @@
 # palautusrepositorio
 
-(https://github.com/Zatyri/ohtuvarasto)
+https://github.com/Zatyri/ohtuvarasto
