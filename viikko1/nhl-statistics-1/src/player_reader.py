@@ -5,6 +5,9 @@ class PlayerReader:
     def __init__(self):
         self._url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt"
 
+    def __init__(self, url:str) -> None:
+        self._url = url
+
     def get_players(self):
         players_file = request.urlopen(self._url)
         players = []
