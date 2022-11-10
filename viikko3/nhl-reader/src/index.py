@@ -23,12 +23,19 @@ def main():
 
         players.append(player)
 
-    print("Players from FIN")
+    def printAll():
+        print("Players from FIN")
+        for player in players:
+            if player.nationality == "FIN":
+                print(player.name + " team " + player.team + " goals " + str(player.goals) + " assists " + str(player.assists))
 
-    for player in players:
-        if player.nationality == "FIN":
-            print(player.name + " team " + player.team + " goals " + str(player.goals) + " assists " + str(player.assists))
 
+    def printGoalsAndAssists():
+        for player in players:
+            if player.nationality == "FIN":
+                print(f"{player.name:20} {player.team:2} {player.goals:2} + {player.assists:2} = {player.goals + player.assists}")
+
+    printGoalsAndAssists()
 
 if __name__ == "__main__":
     main()
