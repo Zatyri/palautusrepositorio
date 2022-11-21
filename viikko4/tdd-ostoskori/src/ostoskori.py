@@ -38,12 +38,10 @@ class Ostoskori:
                 ostos.muuta_lukumaaraa(-1)
                 if ostos.lukumaara() == 0:
                     self.lista.remove(ostos)  
-                break
-        
-            
+                break    
 
     def tyhjenna(self):
-        pass
+        self.lista = []
         # tyhjentää ostoskorin
 
     def ostokset(self):
