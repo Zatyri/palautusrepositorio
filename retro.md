@@ -1,0 +1,4 @@
+Start, Stop, Continue, More of, Less of Wheel retrospektiivissä jaetaan ryhmän ajatuksia viiteen sektoriin, aloita, lopeta, jatka, lisää ja vähemmän. Aloita sisältää asioita joita tiimi ei vielä toteuta, lopeta asioita joita tiimi pitää lopettaa, jatka asioita joita jo tehdään ja toimivat sellaisenaan, lisää sisältää asioita joita tehdään mutta voisi tehdä enemmän ja vähemmän asioita joita tehdään liikaa.
+
+
+Glad, sad, mad retrospektiivissä jaetaan asioita kolmeen ryhmään, jotka ovat iloinen, surullinen ja vihainen. Tiimi kirjoittaa lapuille asioita, jotka ovat tapahtuneet sprintin aikana, asiat voivat olla positiivisia tai negatiivisia. Laput jaetaan sitten taululle tunteiden (iloinen, surullinen, vihainen) mukaan. Laput ryhmitellään ja tiimi päättää mistä asioista he haluavat keskustella. Tiiminjäsenet saavat antaa omat mielipiteensä lappujen aiheista ja tiimi päättää yhdessä mistä asioita he haluavat muuttaa seuraavassa sprintissä. 
