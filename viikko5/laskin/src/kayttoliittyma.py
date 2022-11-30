@@ -13,6 +13,7 @@ class Kayttoliittyma:
     def __init__(self, sovellus, root):
         self._sovellus = sovellus
         self._root = root
+        self.edellinen_komento = Komento.NOLLAUS
 
         self._komennot = {
             Komento.SUMMA: Summa(self._sovellus, self._lue_syote),
@@ -67,16 +68,12 @@ class Kayttoliittyma:
     def _lue_syote(self):
         return self._syote_kentta.get()
 
-    def hae_komento(self, komento):
-        if komento in self._komennot:
-            return self._komennot[komento]
-
-        return None
-
     def _suorita_komento(self, komento):
 
-        komento_olio = self._komennot[komento]  
-        komento_olio.suorita()    
+        komento_olio = self._komennot[komento]
+
+        komento_olio.suorita(self._komennot[self.edellinen_komento])
+        self.edellinen_komento = komento 
 
         self._kumoa_painike["state"] = constants.NORMAL
 
@@ -92,31 +89,50 @@ class Summa:
     def __init__(self, sovellus, lue_syote):
         self.lue = lue_syote
         self.sovellus = sovellus
+        self.edellinen_arvo = sovellus.tulos
 
-    def suorita(self):        
+    def suorita(self, olio):        
         arvo = int(self.lue())
+        self.edellinen_arvo = self.sovellus.tulos
         self.sovellus.plus(arvo)
+
+    def kumoa(self):
+        self.sovellus.aseta_arvo(self.edellinen_arvo)
+
 
 class Miinus:
     def __init__(self, sovellus, lue_syote):
         self.lue = lue_syote
         self.sovellus = sovellus
+        self.edellinen_arvo = sovellus.tulos
 
-    def suorita(self):        
+    def suorita(self, olio):        
         arvo = int(self.lue())
+        self.edellinen_arvo = self.sovellus.tulos
         self.sovellus.miinus(arvo)
+
+    def kumoa(self):
+        self.sovellus.aseta_arvo(self.edellinen_arvo)
 
 class Nollaa:
     def __init__(self, sovellus):
         self.sovellus = sovellus
+        self.edellinen_arvo = sovellus.tulos
 
-    def suorita(self):      
+    def suorita(self, olio):  
+        self.edellinen_arvo = self.sovellus.tulos    
         self.sovellus.nollaa()
 
+    def kumoa(self):        
+        self.sovellus.aseta_arvo(self.edellinen_arvo)
+
 class Kumoa:
-    def __init__(self, sovellus,):        
+    def __init__(self, sovellus):        
         self.sovellus = sovellus
 
-    def suorita(self):        
-        print('not impelmented')
+    def suorita(self, olio):        
+        olio.kumoa()
+
+    def kumoa(self):
+        pass
         
